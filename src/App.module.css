@@ -1,0 +1,9 @@
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom left, rgba(255, 0, 97, 0.6), rgba(255, 35, 26, 0.6), rgba(255, 159, 32, 0.6));
+}
+
