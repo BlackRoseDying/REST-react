@@ -5,7 +5,6 @@ import Backdrop from "../Backdrop/Backdrop";
 import styles from './Modal.module.css';
 
 const Modal = React.memo(({ content, isVisible, changeVisible }) => {
-	console.log('RENDER MODAL');
 	return isVisible ? (
 		<div>
 			<Backdrop isVisible={ isVisible } changeVisible={ changeVisible }/>
