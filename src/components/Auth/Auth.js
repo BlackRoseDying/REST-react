@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import Button from "../UI/Button/Button";
@@ -65,11 +65,15 @@ const Auth = (props) => {
 		return () => axios.interceptors.response.eject(inteceptor);
 	}, [requestPath, emailState, passwordState, history]);
 
+	const changeVisible = useCallback(() => {
+		setError(null);
+	}, []);
+
 	return (
 		<div className={ styles.Auth }>
 			<Modal isVisible={ !!error }
 			       content={ error }
-			       changeVisible={ () => setError(null) }/>
+			       changeVisible={ changeVisible }/>
 			<h1 className={ styles.Title }>Authentication</h1>
 			<input type="email"
 			       placeholder='Email'
